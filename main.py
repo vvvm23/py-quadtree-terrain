@@ -78,6 +78,7 @@ class QuadTree:
             c.draw_to_window(window, color=color, draw_wire=draw_wire)
 
 
+
 pygame.init()
 
 SCREEN_SIZE = (1024, 1024)
@@ -136,19 +137,17 @@ def render_texture_from_world(world: np.array):
 
 window = pygame.display.set_mode(SCREEN_SIZE)
 
-window.fill((255, 255, 255))
+window.fill((135, 206, 235))
 
 #surface = make_surface_rgba(render_texture_from_world(world))
 #window.blit(surface, (0, 0))
 
 quadtree.draw_to_window(window, color=(124, 252, 0), draw_wire=True)
+pygame.display.update()
 
 running = True
 
 while running:
-
-    pygame.display.update()
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
             pygame.quit()
